@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react'
 import { signIn } from '../../store/actions/AuthAction'
-
+import {Platform, StyleSheet, Text, View, TextInput} from 'react-native';
 export class Login extends Component {
   state = {
     email: '',
@@ -23,11 +23,10 @@ export class Login extends Component {
   }
 
 render() {
-  const { authError } = this.props;
-
   return (
     <View>
-
+    <Text>email</Text>
+    <TextInput onChangeText={(text)=> this.state.email = text}></TextInput>
     </View>
   )
 }

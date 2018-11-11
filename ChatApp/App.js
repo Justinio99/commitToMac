@@ -3,8 +3,9 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
 import store from './src/store'
 import { Provider } from 'react-redux'
-import Dashboard from './src/components/dashboard/Dashboard'
+import Login from './src/components/Auth/Login'
 import Home from './src/components/Auth/Home'
+
 export default class App extends Component {
   render() {
     return (
@@ -12,7 +13,7 @@ export default class App extends Component {
       <Router>
         <Scene key="root" >
           <Scene key="home" component={Home} />
-          <Scene key="tab1" component={Dashboard} />
+          <Scene key="login" component={Login} key="login"/>
         </Scene>
       </Router>
       </Provider>

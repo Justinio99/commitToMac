@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Image, StyleSheet, Text, View, Button, ImageBackground,TouchableHighlight} from 'react-native';
-
+import { Actions } from 'react-native-router-flux'
 class Home extends Component {
   render(){
     return (
@@ -12,7 +12,7 @@ class Home extends Component {
                 </View>
                 <View style={styles.box2}>
 
-                <TouchableHighlight style ={styles.buttonStyle1}  onPress={() => {}}>
+                <TouchableHighlight style ={styles.buttonStyle1}  onPress={() => Actions.login()}>
                 <Text style={{fontSize:20, fontWeight: '600', color: 'white'}}>Login</Text>
                 </TouchableHighlight> 
 
