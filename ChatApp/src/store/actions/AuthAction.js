@@ -1,5 +1,4 @@
 import { getFirestore } from '../../config/fbConfig'
-import { platform } from 'os';
 
 export const signIn = (credentials) =>{
   return(dispatch,state,getFirebase)=>{
