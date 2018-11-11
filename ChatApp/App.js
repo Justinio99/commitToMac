@@ -1,22 +1,19 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
-import Navbar from './components/layout/Navbar';
 import Dashboard from './components/dashboard/Dashboard'
-
+import Home from './components/Auth/Home'
 export default class App extends Component {
   render() {
     return (
       
-     <Router navBar = {Navbar}>
-
-      <Scene key="root" >
-     
+      <Router>
+        <Scene key="root" >
+          <Scene key="home" component={Home} />
           <Scene key="tab1" component={Dashboard} />
-   
-   
-  </Scene>
-  </Router>
+        </Scene>
+      </Router>
+
     );
   }
 }
