@@ -1,9 +1,9 @@
-import { getFirestore } from '../../config/fbConfig'
 
+import firebase from '../../config/fbConfig'
 export const signIn = (credentials) =>{
-  return(dispatch,state,getFirebase)=>{
-      const firebase = getFirebase();
-      firebase.auth().signInWithEmailAndPassword(
+  return(dispatch,state)=>{
+      const db = firebase.getFirebase();
+      db.auth().signInWithEmailAndPassword(
           credentials.email,
           credentials.password
       ).then(()=>{
