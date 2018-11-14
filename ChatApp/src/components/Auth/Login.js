@@ -11,7 +11,6 @@ export class Login extends Component {
 
   login(){
     this.props.signIn(this.state);
-    console.log(this.props)
   }
   
 
@@ -28,7 +27,6 @@ render() {
 }
 }
 const mapStateToProps = (state) => {
-  console.log(state)
   return{
   authError: state.authError
   }

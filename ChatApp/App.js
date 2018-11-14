@@ -8,11 +8,12 @@ import Login from './src/components/Auth/Login'
 import Home from './src/components/Auth/Home'
 import SignUp from './src/components/Auth/SignUp'
 import Navbar from './src/components/layout/Navbar'
-import PostSnap from './src/components/Pages/PostSnap'
+//import PostSnap from './src/components/Pages/PostSnap'
 export default class App extends Component {
   
   render() {
     const currentUser = firebase.auth().currentUser;
+    const showNav = currentUser == 'null' ? <Navbar/> : null;  
     return (
       <Provider store={store}>
        <View style={{flex: 1}}>
@@ -22,10 +23,10 @@ export default class App extends Component {
           <Scene key="home" component={Home} />
           <Scene key="login" component={Login} />
           <Scene key="signUp" component={SignUp} />
-          <Scene key="post" component={PostSnap} />
+          
         </Scene>
       </Router>
-      <Navbar/>
+      {showNav}
       </View>
       </Provider>
     );
