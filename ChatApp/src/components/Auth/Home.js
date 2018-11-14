@@ -16,7 +16,7 @@ class Home extends Component {
                 <Text style={{fontSize:20, fontWeight: '600', color: 'white'}}>Login</Text>
                 </TouchableHighlight> 
 
-                <TouchableHighlight style ={styles.buttonStyle2} onPress={() => {}}>
+                <TouchableHighlight style ={styles.buttonStyle2} onPress={() => Actions.signUp()}>
                 <Text style={{fontSize:20, fontWeight: '600', color: 'black'}}>Sign Up</Text>
                 </TouchableHighlight> 
 

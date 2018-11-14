@@ -1,12 +1,11 @@
-
-import firebase from '../../config/fbConfig'
+import firebase from 'react-native-firebase'
 export const signIn = (credentials) =>{
   return(dispatch,state)=>{
-      const db = firebase.getFirebase();
-      db.auth().signInWithEmailAndPassword(
+      firebase.auth().signInWithEmailAndPassword(
           credentials.email,
           credentials.password
       ).then(()=>{
+          
           dispatch({type:'LOGIN_SUCCESS'})
       }).catch((err) =>{
           dispatch({type:'LOGIN_ERROR'},err)
@@ -24,11 +23,10 @@ export const signIn = (credentials) =>{
       })
   }
 }
-
+*/
 export const signUp = (newUser) =>{
-  return (dispatch,getState,{getFirebase,getFirestore}) =>{
-      const firebase = getFirebase();
-      const firestore = getFirestore();
+  return (dispatch) =>{
+      const firestore = firebase.firestore();
 
       firebase.auth().createUserWithEmailAndPassword(
           newUser.email,
@@ -45,4 +43,4 @@ export const signUp = (newUser) =>{
           dispatch({type: 'SIGNUP_ERROR',err})
       })
   } 
-} */
+} 

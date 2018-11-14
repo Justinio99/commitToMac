@@ -3,24 +3,15 @@ import React, { Component } from 'react'
 import { signIn } from '../../store/actions/AuthAction'
 import {Button, StyleSheet, Text, View, TextInput} from 'react-native';
 export class Login extends Component {
+
   state = {
     email: '',
     password: ''
   }
 
-  handleChange = (e) =>{
-    this.setState({
-      [e.target.id]: e.target.value
-    })
-  }
-
-  handleSubmit = (e) =>{
-   e.preventDefault();
-   this.props.signIn(this.state);
-    this.props.history.push('/');
-  }
   login(){
-    this.props.signIn(this.state)
+    this.props.signIn(this.state);
+    console.log(this.props)
   }
   
 
@@ -37,8 +28,9 @@ render() {
 }
 }
 const mapStateToProps = (state) => {
+  console.log(state)
   return{
-  testLogin: true
+  authError: state.authError
   }
 }
 const mapDispachToProps = (dispatch) =>{
