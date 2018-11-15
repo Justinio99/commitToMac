@@ -1,18 +1,26 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react'
 import { signIn } from '../../store/actions/AuthAction'
-import {Button, StyleSheet, Text, View, TextInput} from 'react-native';
+import {Button, StyleSheet, Text, View, TextInput, CameraRoll} from 'react-native';
 export class Login extends Component {
 
   state = {
     email: '',
-    password: ''
+    password: '',
+    image: ''
   }
 
   login(){
     this.props.signIn(this.state);
   }
-  
+  getPhotos = () =>{
+    CameraRoll.getPhotos({
+      first: 10,
+      assetType: 'All'
+    }).then((r)=>{
+      console.log(r)
+    })
+  }
 
 render() {
   return (
@@ -22,6 +30,7 @@ render() {
       <Text>Password</Text>
       <TextInput onChangeText={(pass)=> this.state.password = pass} style={styles.textInput}></TextInput>
       <Button onPress={()=> this.login()} title={'Login'}></Button>
+      
     </View>
   )
 }
