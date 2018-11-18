@@ -8,6 +8,7 @@ import Login from './src/components/Auth/Login'
 import Home from './src/components/Auth/Home'
 import SignUp from './src/components/Auth/SignUp'
 import Navbar from './src/components/layout/Navbar'
+import UploadTest from './components/test/uploadTest'
 //import PostSnap from './src/components/Pages/PostSnap'
 export default class App extends Component {
   
@@ -23,6 +24,7 @@ export default class App extends Component {
           <Scene key="home" component={Home} />
           <Scene key="login" component={Login} />
           <Scene key="signUp" component={SignUp} />
+          <Scene key="uploadTest" component={UploadTest} />
           
         </Scene>
       </Router>
