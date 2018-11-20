@@ -16,8 +16,8 @@ export class Login extends Component {
   }
   getPhotos = () =>{
     CameraRoll.getPhotos({
-      first: 10,
-      assetType: 'All'
+   first: 20,
+       assetType: 'Photos',
     }).then((r)=>{
       console.log(r)
     })
@@ -30,7 +30,7 @@ render() {
       <TextInput onChangeText={(email)=> this.state.email = email} style={styles.textInput}></TextInput>
       <Text>Password</Text>
       <TextInput onChangeText={(pass)=> this.state.password = pass} style={styles.textInput}></TextInput>
-      <Button onPress={()=> this.login()} title={'Login'}></Button>
+      <Button onPress={()=> this.getPhotos()} title={'Login'}></Button>
       
     </View>
   )
