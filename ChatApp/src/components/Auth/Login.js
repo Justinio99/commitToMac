@@ -12,6 +12,7 @@ export class Login extends Component {
 
   login(){
     this.props.signIn(this.state);
+    console.log(this.props)
   }
   getPhotos = () =>{
     CameraRoll.getPhotos({
@@ -36,6 +37,7 @@ render() {
 }
 }
 const mapStateToProps = (state) => {
+  console.log(state)
   return{
   authError: state.authError
   }
